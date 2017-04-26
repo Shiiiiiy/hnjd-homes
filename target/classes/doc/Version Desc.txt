@@ -1,0 +1,12 @@
+hnjd-homes-1.0-SNAPSHOT
+此版本配置：
+spring，hibernate，logback，ehcache,sitemesh，Webservice，logServer，Quartz,freemarker
+详见二次开发手册。
+
+3.3-1.0-SNAPSHOT版本升级说明：
+1.版本兼容：
+此次升级不向下兼容之前版本
+2.变化内容：
+(1)单独添加文件上传样式
+(2)支持自定义登录成功跳转页面
+(3)修复chrome40以上版本验证码定位不准问题

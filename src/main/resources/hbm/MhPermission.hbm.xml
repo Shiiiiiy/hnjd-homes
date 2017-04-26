@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class 
+    name="com.uws.home.model.MhPermission" 
+    table="STU_MH_PERMISSION"
+>
+
+    <id
+        name="id"
+        type="java.lang.String"
+        column="ID"
+    >
+        <generator class="uuid.hex" />
+    </id>
+
+    
+    <many-to-one column="MH_ROLEID" name="mhRoleid"  class="com.uws.home.model.MhRoles"  not-found="ignore"/>
+    <many-to-one column="MH_MENUID" name="mhMenuId"  class="com.uws.home.model.MhMenu"  not-found="ignore"/>
+
+    <many-to-one column="DELETE_STATUS" class="com.uws.home.model.MhDic" name="deleteStatus" />
+    <many-to-one name="status" column="STATUS" class="com.uws.home.model.MhDic"  not-found="ignore" />
+   
+   
+    <property
+        name="createTime"
+        type="java.util.Date"
+        column="CREATE_TIME"
+        length="19"
+    />
+    <property
+        name="updateTime"
+        type="java.util.Date"
+        column="UPDATE_TIME"
+        length="19"
+    />
+  
+
+
+</class>
+</hibernate-mapping>

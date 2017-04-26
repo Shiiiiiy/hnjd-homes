@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class 
+    name="com.uws.home.model.MhMessage" 
+    table="STU_MH_MESSAGE"
+>
+
+    <id
+        name="id"
+        type="java.lang.String"
+        column="ID"
+    >
+        <generator class="uuid.hex" />
+    </id>
+
+    
+    <many-to-one column="MH_OWNER" name="mhOwner"  class="com.uws.user.model.User" lazy="false" not-found="ignore"/>
+    <many-to-one column="MH_SENDER" name="mhSender"  class="com.uws.user.model.User" lazy="false" not-found="ignore"/>
+    <many-to-one column="MH_ISREAD" class="com.uws.home.model.MhDic" name="mhIsread" />
+    <many-to-one column="DELETE_STATUS" class="com.uws.home.model.MhDic" name="deleteStatus" />
+    <many-to-one name="status" column="STATUS" class="com.uws.home.model.MhDic" lazy="false" not-found="ignore" />
+   
+     <property
+        name="mhContent"
+        type="java.lang.String"
+        column="MH_CONTENT"
+        length="2000"
+     />
+     
+      <property
+        name="mhZan"
+        type="java.lang.Integer"
+        column="MH_ZAN"
+        length="11"
+     />
+     
+      <property
+        name="mhParentId"
+        type="java.lang.String"
+        column="MH_PARENTID"
+        length="32"
+     />
+   
+    <property
+        name="createTime"
+        type="java.util.Date"
+        column="CREATE_TIME"
+        length="19"
+    />
+    <property
+        name="updateTime"
+        type="java.util.Date"
+        column="UPDATE_TIME"
+        length="19"
+    />
+  
+
+
+</class>
+</hibernate-mapping>

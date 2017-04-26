@@ -1,0 +1,7 @@
+<auditor>
+ <appender name="server" class="com.uws.log.auditlog.SocketAuditAppender">
+   <remoteHost>192.168.20.105</remoteHost>
+   <port>9001</port>
+   <clientAppName>BDP_APP</clientAppName>
+ </appender>
+</auditor>

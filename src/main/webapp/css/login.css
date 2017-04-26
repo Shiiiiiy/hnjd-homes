@@ -1,0 +1,16 @@
+﻿@charset "utf-8";
+html {min-height:100%;_height:100%; height:100%;}
+body {background:#34b6cd; position:relative;overflow:hidden;min-height:100%;_height:100%; height:100%;}
+.login-bg {background:url(images/login_bg.png) center bottom no-repeat; background-size:contain; position:absolute; left:0; bottom:40px; height:630px;}
+.foot {height:40px; line-height:40px; background:#2893a6; position:absolute; bottom:0;}
+.login-box {position:absolute; top:50%; left:50%; width:345px; height:452px; background:#fff; margin:-230px 0 0 -176.5px; z-index:5;border:#5fc4d4 solid 4px;}
+.login-box .header { background:#418bca; height:160px; border-bottom:#5fc4d4 solid 4px; margin-bottom:10px;}
+.login-box .header img { padding-top:15px; display:block; margin:auto;}
+.login-box p { position:relative; display:inline-block; margin:20px 0 0 30px;}
+.login-box p span { color:#C5C5C5;}
+.login-box .login-input {width:230px; padding:0 40px 0 10px; height:40px; border:#bebebe solid 1px; -moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;color:#ccc; }
+.login-box .login-icon {background-image:url(images/login_icon.png);background-repeat:no-repeat; position:absolute; top:0; right:10px; width:17px; height:40px; display:inline-block;}
+.login-box .user {background-position:0 0 ;}
+.login-box .password {background-position:0 -40px;}
+.login-box .login-check { width:20px; height:20px; vertical-align:middle; background:#fff; border:#eee solid 1px;}
+.login-box .login-button { width:282px; height:42px; background:#418bca;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border:none;color:#fff;font-size:20px;cursor:pointer;}

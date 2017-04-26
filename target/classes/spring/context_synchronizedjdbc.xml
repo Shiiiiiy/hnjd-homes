@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
+
+	default-autowire="byName" default-lazy-init="false">
+
+	<!-- 属性文件读入 -->
+
+	<context:property-placeholder location="classpath*:db/jdbc_oracle.properties,classpath*:config/webservice_config.properties,classpath*:config/timer_config.properties"/>
+	
+	<!-- 数据库连接池 -->
+	<bean id="dataSourcesynchronized" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName"	value="${finance_jdbc.driverClassName}" />
+ 		<property name="url" value="${finance_jdbc.url}" />
+		<property name="username" value="${finance_jdbc.username}" />
+		<property name="password" value="${finance_jdbc.password}" />
+		<property name="initialSize" value="${finance_jdbc.initialSize}"/>
+		<property name="maxActive" value="${finance_jdbc.maxActive}" />
+		<property name="maxIdle" value="${finance_jdbc.maxIdle}" />
+		<property name="maxWait" value="${finance_jdbc.maxWait}" />
+		<property name="timeBetweenEvictionRunsMillis" value="1000"/>
+		<property name="testWhileIdle" value="${finance_jdbc.testWhileIdle}"/>
+		<property name="validationQuery" value="${finance_jdbc.validationQuery}"/>
+	</bean>
+
+	<!-- 基本事务定义,使用transactionManager作事务管理。如果不采用AOP模式，则删除以下内容。 默认get*方法的事务为readonly,其余方法按默认设置. 
+		默认的设置请参考Spring文档事务一章.
+
+	<tx:advice id="txAdviceSy" transaction-manager="txManagerSy">
+		<tx:attributes>
+			<tx:method name="get*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="find*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="is*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="check*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="query*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="select*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="list*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="*" propagation="REQUIRED" rollback-for="Exception" />
+		</tx:attributes>
+	</tx:advice>  -->
+
+	<!-- 以AspectJ方式 定义 AOP，保留ps的bean配置，添加自己的bean配置 
+	<aop:config proxy-target-class="true">
+		<aop:advisor pointcut="execution(* com.uws..*ServiceImpl.*(..))"
+			advice-ref="txAdviceSy" />
+	</aop:config>
+
+	<bean id="txManagerSy"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+
+		<property name="dataSource" ref="dataSourcesynchronized" />
+
+	</bean>  -->
+
+	<bean id="financeJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref bean="dataSourcesynchronized" />
+		</property>
+	</bean>
+
+<!-- 此配置文件主要用于第三方-财务数据库访问  马小东  2016年8月24日 09:51:31 -->
+
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<configuration>  
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">  
+    <layout class="ch.qos.logback.classic.PatternLayout">  
+      <pattern>%-20(%d{HH:mm:ss.SSS} [%thread]) %-5level %logger{80} - %msg%n</pattern>  
+    </layout>  
+  </appender>  
+ 
+  <appender name="SERVER" class="com.uws.log.syslog.SocketAppender">
+    <remoteHost>192.168.20.105</remoteHost>
+    <port>9000</port>
+    <reconnectionDelay>10000</reconnectionDelay>
+    <queueSize>5000</queueSize>
+    <servercode>BDP</servercode>    
+  </appender>
+ 
+  <logger name="org.springframework" level="ERROR" />  
+  <logger name="org.hibernate" level="ERROR" /> 
+  <logger name="ch.qos.logback" level="ERROR" /> 
+  <logger name="com.uws" level="ERROR" /> 
+  <root level="ERROR"> 
+   
+    <appender-ref ref="stdout" />
+    <appender-ref ref="SERVER" /> 
+   
+  </root>  
+</configuration>  

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+  	<mapping path="/login.do" decorator="/decorators/login.ftl"/>
+	<mapping path="/loginauth.do" decorator="/decorators/default2.ftl"/>
+	<mapping path="/*/*/nsm/*" decorator="/decorators/default2.ftl"/>
+	<mapping path="/*/*/noSecurity/*" decorator="/decorators/default2.ftl"/>
+	<mapping path="/security/loadSidebar*" decorator="/decorators/default2.ftl"/>
+	<mapping path="/logout.do" decorator="/decorators/default2.ftl"/>
+  	<mapping path="/user/orgChild/*" decorator="/decorators/default2.ftl"/>
+  	<mapping path="/*/comp/*" decorator="/decorators/default2.ftl"/>
+  	<mapping path="/*" decorator="/decorators/default.ftl"/>
+  	<mapping path="/security/loadOutLine*" decorator="/decorators/default2.ftl"/>
+  	<mapping path="/main.do" decorator="/decorators/maindefault.ftl"/>
+  	
+  	<mapping path="/sys/sysConfig/singleFileUpload.do" exclue="true"/>
+  	
+  <!-- 配置参考http://wiki.sitemesh.org/display/sitemesh3/Configuring+SiteMesh+3 -->	
+  <!-- Map default decorator. This shall be applied to all paths if no other paths match. 
+  <mapping decorator="/default-decorator.html"/>
+ -->
+  <!-- Map decorators to path patterns. 
+  <mapping path="/admin/*" decorator="/another-decorator.html"/>
+  <mapping path="/*.special.jsp" decorator="/special-decorator.html"/>
+  -->
+  <!-- Alternative convention. This is more verbose but allows multiple decorators
+       to be applied to a single path.
+  <mapping>
+    <path>/articles/*</path>
+    <decorator>/decorators/article.html</decorator>
+    <decorator>/decorators/two-page-layout.html</decorator>
+    <decorator>/decorators/common.html</decorator>
+  </mapping>
+ -->
+  <!-- Exclude path from decoration. 
+  <mapping path="/javadoc/*" exclue="true"/>
+  <mapping path="/brochures/*" exclue="true"/>
+  -->
+  	  	
+</sitemesh>

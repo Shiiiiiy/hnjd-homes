@@ -1,0 +1,7 @@
+二次开发安装部署操作步骤：
+1、修改db下数据库配置信息
+2、修改logback配置文件
+3、修改config下的配置文件
+4、修改accesslog，auditlog下配置文件
+5、hnjd-homes\src\main\resources\excel\bdpExcel.xml是excel导入导出的配置文件，不能删除。
+6、如需部署在oracle数据库，需要从mysql数据库迁移，各模块不提供oracle脚本

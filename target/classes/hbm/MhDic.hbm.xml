@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class 
+    name="com.uws.home.model.MhDic" 
+    table="STU_MH_DIC"
+>
+
+    <id
+        name="id"
+        type="java.lang.String"
+        column="ID"
+    >
+        <generator class="uuid.hex" />
+    </id>
+
+    
+     <property
+        name="mhCode"
+        type="java.lang.String"
+        column="MH_CODE"
+        length="40"
+     />
+     
+     <property
+        name="mhName"
+        type="java.lang.String"
+        column="MH_NAME"
+        length="40"
+     />
+     
+      <property
+        name="mhParentId"
+        type="java.lang.String"
+        column="MH_PARENT_ID"
+        length="32"
+     />
+   
+     <property
+        name="deleteStatus"
+        type="java.lang.Integer"
+        column="DELETE_STATUS"
+        length="40"
+     />
+     
+     <property
+        name="status"
+        type="java.lang.Integer"
+        column="STATUS"
+        length="11"
+     />
+   
+   
+    <property
+        name="createTime"
+        type="java.util.Date"
+        column="CREATE_TIME"
+        length="19"
+    />
+    <property
+        name="updateTime"
+        type="java.util.Date"
+        column="UPDATE_TIME"
+        length="19"
+    />
+  
+
+
+</class>
+</hibernate-mapping>

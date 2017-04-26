@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class 
+    name="com.uws.home.model.MhMenu" 
+    table="STU_MH_MENU"
+>
+
+    <id
+        name="id"
+        type="java.lang.String"
+        column="ID"
+    >
+        <generator class="uuid.hex" />
+    </id>
+
+    
+    <many-to-one column="DELETE_STATUS" class="com.uws.home.model.MhDic" name="deleteStatus" />
+    <many-to-one name="status" column="STATUS" class="com.uws.home.model.MhDic" lazy="false" not-found="ignore" />
+   
+     <property
+        name="mhMenuCode"
+        type="java.lang.String"
+        column="MH_MENUCODE"
+        length="40"
+     />
+     
+     <property
+        name="mhMenuName"
+        type="java.lang.String"
+        column="MH_MENUNAME"
+        length="40"
+     />
+     
+     <property
+        name="mhMenuUrl"
+        type="java.lang.String"
+        column="MH_MENUURL"
+        length="100"
+     />
+     
+     <property
+        name="mhMenuOrder"
+        type="java.lang.Integer"
+        column="MH_MENUORDER"
+        length="11"
+     />
+     
+     <property
+        name="mhMenuLevel"
+        type="java.lang.Integer"
+        column="MH_MENULEVEL"
+        length="11"
+     />
+     
+     <property
+        name="mhMenuImage"
+        type="java.lang.String"
+        column="MH_MENUIMAGE"
+        length="50"
+     />
+     
+     
+   
+    <property
+        name="createTime"
+        type="java.util.Date"
+        column="CREATE_TIME"
+        length="19"
+    />
+    <property
+        name="updateTime"
+        type="java.util.Date"
+        column="UPDATE_TIME"
+        length="19"
+    />
+  
+
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<excels>
+	<rules>
+		<rule name="userRule" class="com.uws.user.controller.UserRule" />
+		<rule name="demoRule" class="com.uws.demo.controller.DemoRule" />
+	</rules>
+	<imports>
+		<!-- 
+		import 属性说明:
+			id:唯一标识
+			sheet:excel sheet数
+			table:hibernate po
+			beginRow:excel中从第几行开始读取数据
+			columnCount:最大列数
+			rowCount:支持上传数据的最大行数
+		column 属性说明:
+			site：excel列
+			name：excel对应列名
+			must：不是必选字段， must="true" 则表示必填
+			table_column：数据库字段名,与PO字段一致
+			value：自定义值，可以写规则的name，需要实现operation方法，主要是自定义值
+			type:数据类型，string,number,date(日期格式),email
+			format：格式化规则（java实现类，实现format方法）和type 为number 类型的格式化
+			length:长度限制
+			only：不是必选字段， only="true" 表示检查上传数据是否有重复的， 
+			rule：自定义规则（java实现类 ，实现validate方法）校验规则
+		 -->
+		 
+		<import id="user" sheet="0"  beginRow="2" columnCount="13" rowCount="1000">
+		 
+			<column site="#1" name="gender" table_column="genderDic" value="@userRule" />
+			<column site="#2" name="certType" table_column="certTypeDic" value="@userRule" />
+			<column site="#3" name="status" table_column="statusDic" value="@userRule" />
+			<column site="#4" name="deleteStatus" table_column="deleteStatus" value="temp.deleteStatus" />
+			<column site="#5" name="userType" table_column="userType" value="@userRule" />
+			
+			<column site="A" name="人员名称" type="string"  must="true" only="false" length="30" table_column="name" rule="userRule" />
+			<column site="B" name="性别" type="string" must="true" length="20" table_column="genderText" rule="userRule"/>
+			<column site="C" name="用户类型" type="string" must="true" length="10" table_column="userTypeText" rule="userRule"/>
+			<column site="D" name="证件类型" type="string" format="userRule" must="false" length="10" table_column="certTypeText" rule="userRule"/>
+			<column site="E" name="证件号码" type="string" must="false" length="20" table_column="certNum" />
+			<column site="F" name="手机号码" type="string" must="false" length="11" table_column="phone" />
+			<column site="G" name="固定电话" type="string" must="false" length="20" table_column="tel" />
+			<column site="H" name="电子邮件" type="email" must="false" length="50" table_column="email" />
+			<column site="I" name="家庭地址" type="string" must="false" length="100" table_column="address" />
+			<column site="J" name="邮编" type="string" must="false" length="10" table_column="postcode" />
+			<column site="K" name="人员状态" type="string" must="true" length="10" table_column="statusText" rule="userRule"/>
+			<column site="L" name="备注 " type="string" must="false" length="500" table_column="comments" />			
+			<column site="M" name="登录名" type="string" must="true" only="true" length="30" table_column="loginName" rule="userRule" />
+			
+		</import>
+		
+		<import id="demo" sheet="0"  beginRow="2" columnCount="3" rowCount="1000">
+		 
+			<column site="#1" name="gender" table_column="gender" value="@demoRule" />
+		
+			<column site="A" name="名称" type="string"   must="true" length="30" table_column="name" />
+			<column site="B" name="编码" type="string" only="true" must="true" length="32" table_column="code" rule="demoRule" />
+			<column site="C" name="性别" type="string" must="true" length="20" table_column="genderText" rule="demoRule"/>
+		</import>
+		
+		
+	</imports>
+	
+	<exports>
+		<!-- 属性说明
+			site：excel列
+			name：excel对应列名
+			table_column：数据库字段名
+			type:数据类型，string,number,date(日期格式),
+			format：与type 配对进行数据格式化: 
+				   type=date  format属性 按时日期格式化 yyyy-MM-dd HH:mm:ss
+				   type=number format属性  可设置小数格式(0.00);可设置百分比格式(0.00%);可设置千分位格式(#,##0.00)
+				   type=money format属性 可设置为货币格式(￥#,##0.00)
+		 -->
+		<export id="exportuser" sheet="0" beginRow="1" rowCount="25000">
+			<column site="A" name="人员名称" type="string" table_column="name" />
+			<column site="B" name="组织机构" type="string" table_column="orgName" />
+			<column site="C" name="岗位" type="string" table_column="positionName" />
+			<column site="D" name="性别" type="string" table_column="gender" />
+			<column site="E" name="用户类型" type="string" table_column="userType" />
+			<column site="F" name="证件类型" type="string" table_column="certType" />
+			<column site="G" name="证件号码" type="string" table_column="certNum" />
+			<column site="H" name="手机号码" type="string" table_column="phone" />
+			<column site="I" name="固定电话" type="string" table_column="tel" />
+			<column site="J" name="电子邮件" type="string" table_column="email" />
+			<column site="K" name="家庭地址" type="string" table_column="address" />
+			<column site="L" name="邮编" type="string" table_column="postcode" />
+			<column site="M" name="人员状态" type="string" table_column="status" />
+			<column site="N" name="备注 " type="string" table_column="comments" />
+			<column site="O" name="创建时间 " type="date" format="yyyy-MM-dd"  table_column="createTime" />
+		</export>
+		
+		<export id="exportdemo" sheet="0" beginRow="1" rowCount="25000">
+			<column site="A" name="名称" type="string" table_column="name" />
+			<column site="B" name="编码" type="string" table_column="code" />	
+			<column site="C" name="性别" type="string" table_column="gender" />
+		</export>
+
+		<export id="dynamicexportdemo" sheet="0" beginRow="1" rowCount="25000">
+			<column  name="名称" type="string" table_column="name" />
+			<column  name="编码" type="string" table_column="code" />	
+			<column  name="性别" type="string" table_column="gender" />
+		</export>
+		
+	</exports>
+</excels>

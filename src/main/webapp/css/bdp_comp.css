@@ -1,0 +1,97 @@
+/*
+ author ll
+ date 2013-8-31
+ description component css
+*/
+
+ul.myztree {/*带背景的ztree*/
+	   /*  margin-top: 10px; */
+	    border: 1px solid #c2c2c2;
+	    background: #ecf7fd;
+	    width: 220px;
+	    height: 560px;
+	    overflow-y: scroll;
+	    overflow-x: auto;
+	}
+ul.relativeztree {/*带背景的ztree*/
+	   /*  margin-top: 10px; */
+	    border: 1px solid #c2c2c2;
+	    background: #ecf7fd;
+	    width: 100%;
+	    height: 560px;
+	    overflow-y: scroll;
+	    overflow-x: auto;
+	}
+/*
+ul.leftframe {左侧背景框
+	    margin-top: 10px;
+	    border: 1px solid #617775;
+	    background: #f0f6e4;
+	    width: 90%;
+	    height: 560px;
+	    overflow-y: scroll;
+	    overflow-x: auto;
+	}
+ul.rightframe {右侧背景框
+		padding-top:5px;
+		padding-left:5px;
+	    margin-top: 10px;
+	    border: 1px solid #617775;
+	    background: #f0f6e4;
+	    width: 100%;
+	    height: 570px;
+	    overflow-y: scroll;
+	    overflow-x: auto;
+	} */
+div.myModal{/*控制modal的大小，显示位置，内容显示策略（换行）*/
+		width: 400px;
+		word-wrap:break-word;
+		margin: -300px 0 0 -200px;
+	}
+div.myDialog{/*控制confirm的显示位置*/
+		width: 400px;
+		word-wrap:break-word;
+		margin: -200px 0 0 -200px;
+	}
+/*动态缩略字段 start*/
+table.tablecut{/*固定定位，平均分配宽度，需要内容截取的table要增加此样式*/
+		table-layout:fixed;
+	}
+.autocut{/*td内容截取，于th表头的宽度为基准进行截取,需要截取的td增加此样式即可*/
+	    overflow:hidden;
+	    white-space:nowrap;
+	    text-overflow:ellipsis;
+	    -o-text-overflow:ellipsis;
+	    -icab-text-overflow: ellipsis;
+	    -khtml-text-overflow: ellipsis;
+	    -moz-text-overflow: ellipsis;
+	    -webkit-text-overflow: ellipsis;
+	    border:0;
+	}
+.autocut:hover{/*鼠标移至，悬停到目标区域时调用的样式；即鼠标移至目标区域，显示目标区域全部内容*/
+	   /*  overflow:visible; */
+	    white-space:normal;
+	    word-wrap: break-word;
+	    border:0;
+	}
+/*动态缩略字段 end*/
+/*遮罩层 start*/
+div.box{ 
+	width:100%; 
+	height:100%; 
+	position:relative; 
+	margin:0px auto; 
+	} 
+div.shade{ 
+	width:100%; 
+	height:100%; 
+	background-color:#fff; 
+	position:absolute; 
+	z-index:999; 
+	left:0px; 
+	top:0px; 
+	-moz-opacity:0.5;/*Firefox*/ 
+	opacity:0.4;/*Opera*/ 
+	filter:alpha(opacity=50); /*IE*/ 
+	}
+/*遮罩层 end*/

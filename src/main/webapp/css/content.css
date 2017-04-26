@@ -1,0 +1,73 @@
+﻿/*manage*/
+body {background:#f0f3f4;overflow-x:hidden;}
+.title { font-size:24px; height:65px; line-height:65px; margin:0;  padding-left:30px;background:#f6f8f8;-moz-box-shadow:1px 1px 3px #dadbdb; /* Firefox */  -webkit-box-shadow:1px 1px 3px #dadbdb; /* Safari 和 Chrome */  box-shadow:1px 1px 3px #dadbdb; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */  }
+.wrapper { background:#fff;border:#dddddd solid 1px; margin:20px auto; width:94%; padding:20px 0; font-size:14px;}
+.screen dl { padding:0 20px;}
+.screen dt, .screen dd { float:left;}
+.screen dt { height:25px;line-height:25px;}
+.screen dd a {display:inline-block; margin-left:30px; padding:0 10px; height:25px; line-height:25px;}
+.screen dd a:hover {background:#34b6cd; color:#fff;}
+.screen dd.selected a{background:#34b6cd;color:#fff;}.select-result{border-top:#ddd dotted 1px; padding-top:20px; margin-top:20px; height:30px;}
+.select-result dd.selected a{height:30px;padding:0 24px 0 10px;line-height:30px;display:block; border:#ededed solid 1px;position:relative;float:left;margin:0 10px 10px 0;color:#34b6cd;font-size:14px;background:url(images/close.png) 90% center no-repeat #fff; -moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}/**/
+.container-body { margin:20px;}
+.sort {background:#fff;border:#ddd solid 1px; padding-left:30px; height:50px; line-height:50px;}
+.sort select { float:left; border:none; outline:none;  color:#666; margin-top:12px;width:150px;}
+.sort .txt {font-size:16px; font-weight:800;color:#666;}
+.sort .txt b {color:#FB5A00;}
+.sort a {display:inline-block; width:50px; height:50px; border-left:#ddd solid 1px; background-image:url(images/sort.png);background-repeat:no-repeat;}
+.sort a.square {background-position:-50px 0;}.sort a.line {background-position:-50px -50px;}
+.sort a.square-open {background-position:0 0;}.sort a.line-open {background-position:0 -50px;}/*main-infor*/
+.teacher-list {padding:0 5px!important;}
+.main-infor {background:#f8f8f8; border:#ddd solid 1px; margin-top:20px; padding:40px 30px;}
+.charts { margin:auto;}
+.pie-data { margin:20% auto 0 auto; width:140px;}
+.pie-data li {line-height:1.8em;}
+.pie-data li i {display:inline-block; width:14px; height:14px; float:left; margin-right:10px; margin-top:6px;}
+.pie-data li .color01 {background:#61bdcd;}
+.pie-data li .color02 {background:#dcdcdc;}
+.pie-data li .color03 {background:#93d8b8;}
+.pie-data li .color04 {background:#e3ae9b;}
+.pie-data li .color05 {background:#c23531;}
+.loan { margin:10px 0 0 0;}
+.loan li { line-height:1.3em;}
+.classify-list {margin:10px 0 0 0;}
+.loan li i { width:10px; height:10px;-moz-border-radius: 50%;-webkit-border-radius:50%;border-radius:50%; margin-top:4px;}
+.infor-table td {border-bottom:#ddd dashed 1px;border-left:#ddd dashed 1px; padding:20px;}
+.infor-table td.noborder {border-bottom:none;}
+.infor-table span {font-size:200%; color:#35B558; font-weight:400; height:35px; display:block; overflow:hidden;}
+.infor-table b {color:#35B558; font-weight:normal;}
+.classify-box {background:#fff;border:#ddd solid 1px; margin-bottom:20px;}
+.classify-box h3 { height:45px; line-height:45px; padding:0 20px; font-size:16px; font-weight:600; color:#666; border-bottom:#ddd dashed 1px; margin:0;}
+.lable-classify {display:inline-block; height:17px; padding:0 10px; line-height:17px;-moz-border-radius: 5px;-webkit-border-radius:5px;border-radius:5px; background:#dff4fe; vertical-align:middle; margin-left:10px; font-size:12px; color:#34B6CD; font-weight:normal;}
+.classify-content {padding:40px 20px;}
+.nodata { padding:0; height:121px;}
+.nodata p {font-size:22px; color:#999; margin-top:10px;}
+.fixhight { height:121px;}
+.line-box {padding:20px 30px;}
+/**/
+.box-stu {background:#fff;border:#ddd solid 1px; margin-bottom:20px;}
+.box-stu h3 {color:#34B6CD; margin:0; font-size:14px; height:40px; line-height:40px; padding-left:20px;}
+.box-padding { padding:30px;}
+.tj, .sex-list { width:80%; margin:auto;}
+.tj dt, .tj.dd {float:left;}
+.tj dt span { width:40px; height:40px;-moz-border-radius: 50%;-webkit-border-radius:50%;border-radius:50%; display:inline-block; line-height:40px; color:#fff; text-align:center; font-weight:normal;font-size:20px; margin-top:-5px;}
+.tj .gold { background:#d9bf5b;}
+.tj .blue {background:#59abe1;}
+.tj dd .back-p { background:#dfdfdf; height:28px; margin-left:60px; }
+.tj dd .back-p p { color:#fff;font-size:14px; height:28px; line-height:28px;padding-left:10px;}
+.sex-list .full-w { width:250px;}
+.sex-list .txt {position:absolute; right:-120px; line-height:50px;}
+.sex-list .txt span {color:#999999;}
+.sex-list .per {height:55px; position:relative;}
+.sex-list .man {background:url(../css/images/man.png) repeat-x;}
+.sex-list .woman {background:url(../css/images/woman.png) repeat-x;}
+/**/
+.orange-stu {color:#FB5A00;}
+.gray-stu {color:#ccc;}
+.stu {width:auto;}
+.classify-box .ss {cursor:pointer;color:#34B6CD;}
+.classify-box .ss b {display:inline-block;width:24px; height:24px;background-image:url(images/arr.png);background-repeat:no-repeat;background-position:0 0; float:right; margin-top:10px;}
+.classify-box .ss .down {background-position:0 -24px;}
+.border-r {border-left:#dadada dashed 1px;margin-top:20px; }
+.no-bor {border-bottom:none!important;}
+
